@@ -7,7 +7,6 @@ const message = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (req.method) {
       case "POST": {
         const { username } = JSON.parse(req.body);
-        console.log(req);
         const user = await prisma.user.create({
             data: {
                 name: username,
